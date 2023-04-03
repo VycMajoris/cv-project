@@ -7,11 +7,14 @@ export default function Education(props) {
       className="education-container"
       onMouseEnter={(e) => {
         e.stopPropagation();
-        props.modifyState("addEducationBtn");
+        props.modifyState(true, "addEducationBtn");
       }}
-      onMouseLeave={() => props.modifyState("addEducationBtn")}
+      onMouseLeave={() => props.modifyState(false, "addEducationBtn")}
     >
       <SectionDivider sectionName="Education" buttonState={props.buttonState} />
+      {props.buttonState.addEducationBtn && (
+        <button className="add-education-btn">ADD</button>
+      )}
       <p>asdslkdafjlksj</p>
     </div>
   );

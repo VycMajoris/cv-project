@@ -172,8 +172,13 @@ main {
   font-size: 1.25rem;
   color: var(--blue-accent);
 }
+
+.edit-profile-btn {
+  height: 2rem;
+}
+
 .profile-container {
-  
+  position: relative;
 }
 
 .education-container, .experience-container {
@@ -194,6 +199,16 @@ main {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
+.education-container, .experience-container {
+  position: relative;
+}
+
+.add-education-btn, .add-experience-btn{
+  position: absolute;
+  top: 1.25%;
+  right: 1%;
+}
+
 /* Default flex class */
 
 .flex {
@@ -206,8 +221,9 @@ button {
   color: var(--off-white);
   background-color: var(--blue-accent);
   border-style: none;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   cursor: pointer;
+
 }
 
 button:hover, button:focus {
@@ -216,3 +232,27 @@ button:hover, button:focus {
 }
 
 /* Profile Popup Form */
+
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--blue-accent);
+  width: 300px;
+  height: 400px;
+  padding: 1rem;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 10;
+  
+}
+
+textarea {
+  resize: none;
+  flex-grow: 1;
+}
+
+label {
+  color: white;
+}

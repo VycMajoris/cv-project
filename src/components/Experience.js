@@ -7,14 +7,17 @@ export default function Experience(props) {
       className="experience-container"
       onMouseEnter={(e) => {
         e.stopPropagation();
-        props.modifyState("addExperienceBtn");
+        props.modifyState(true, "addExperienceBtn");
       }}
-      onMouseLeave={() => props.modifyState("addExperienceBtn")}
+      onMouseLeave={() => props.modifyState(false, "addExperienceBtn")}
     >
       <SectionDivider
         sectionName="Experience"
         buttonState={props.buttonState}
       />
+      {props.buttonState.addExperienceBtn && (
+        <button className="add-experience-btn">ADD</button>
+      )}
     </div>
   );
 }

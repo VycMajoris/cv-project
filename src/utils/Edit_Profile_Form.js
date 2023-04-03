@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export default function EditProfileForm() {
+export default function EditProfileForm(props) {
   const [form, setForm] = useState({
     yourNameText: "",
     yourTitleText: "",
@@ -16,9 +16,16 @@ export default function EditProfileForm() {
     }));
   }
 
+  function handleClick() {
+    props.setFormVisibility((prevForm) => ({
+      ...prevForm,
+      profileFormVisible: false,
+    }));
+  }
+
   return (
-    <div className="edit-profile-form">
-      <label htmlFor="your-name"></label>
+    <form className="edit-profile-form">
+      <label htmlFor="your-name">Your name</label>
       <input
         type="text"
         className="form--input"
@@ -27,7 +34,7 @@ export default function EditProfileForm() {
         onChange={handleChange}
         id="your-name"
       />
-      <label htmlFor="your-title"></label>
+      <label htmlFor="your-title">Your title</label>
       <input
         type="text"
         className="form--input"
@@ -36,15 +43,17 @@ export default function EditProfileForm() {
         onChange={handleChange}
         id="your-title"
       />
-      <label htmlFor="about-you"></label>
-      <input
-        type="text"
-        className="form--input"
+      <label htmlFor="about-you">About you</label>
+      <textarea
+        className="form--input text-area"
         name="aboutYouText"
         value={form.aboutYouText}
         onChange={handleChange}
         id="about-you"
       />
-    </div>
+      <button type="button" onClick={handleClick}>
+        CLOSE
+      </button>
+    </form>
   );
 }

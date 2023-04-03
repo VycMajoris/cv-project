@@ -16,9 +16,21 @@ export default function App() {
     addExperienceBtn: false,
   });
 
-  function editButtonState(buttonType) {
+  console.log(buttonState);
+
+  const [formVisibility, setFormVisibility] = useState({
+    profileFormVisible: false,
+    educationFormVisible: false,
+    experienceFormVisible: false,
+    skillsFormVisible: false,
+    personalFormVisible: false,
+  });
+
+  /*   console.log(formVisibility); */
+
+  function editButtonState(boolValue, buttonType) {
     setButtonState((prevState) => {
-      return { ...prevState, [buttonType]: !prevState[buttonType] };
+      return { ...prevState, [buttonType]: boolValue };
     });
   }
 
@@ -34,26 +46,38 @@ export default function App() {
           ></img>
           <PersonalInfo
             buttonState={buttonState}
-            modifyState={(button) => editButtonState(button)}
+            modifyState={(boolValue, buttonType) =>
+              editButtonState(boolValue, buttonType)
+            }
           />
           <Skills
             buttonState={buttonState}
-            modifyState={(button) => editButtonState(button)}
+            modifyState={(boolValue, buttonType) =>
+              editButtonState(boolValue, buttonType)
+            }
           />
         </section>
 
         <section className="right-section">
           <Profile
             buttonState={buttonState}
-            modifyState={(button) => editButtonState(button)}
+            modifyState={(button, buttonType) =>
+              editButtonState(button, buttonType)
+            }
+            formVisibility={formVisibility}
+            setFormVisibility={setFormVisibility}
           />
           <Education
             buttonState={buttonState}
-            modifyState={(button) => editButtonState(button)}
+            modifyState={(button, buttonType) =>
+              editButtonState(button, buttonType)
+            }
           />
           <Experience
             buttonState={buttonState}
-            modifyState={(button) => editButtonState(button)}
+            modifyState={(button, buttonType) =>
+              editButtonState(button, buttonType)
+            }
           />
         </section>
       </main>
