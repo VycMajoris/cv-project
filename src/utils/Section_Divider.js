@@ -8,7 +8,13 @@ export default function SectionDivider(props) {
   return (
     <div className="section-divider">
       <div style={styles} className="divider-thin"></div>
-      <h2>{props.sectionName}</h2>
+      <div className="flex">
+        <h2>{props.sectionName}</h2>
+        {props.buttonState &&
+          (props.buttonState.addEducationBtn ||
+            props.buttonState.addExperienceBtn) && <button>ADD</button>}
+      </div>
+
       <div style={styles} className="divider-normal"></div>
     </div>
   );

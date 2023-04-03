@@ -1,8 +1,15 @@
 import React from "react";
 
-export default function PersonalInfo() {
+export default function PersonalInfo(props) {
   return (
-    <div className="personal-info-container">
+    <div
+      className="personal-info-container"
+      onMouseEnter={(e) => {
+        e.stopPropagation();
+        props.modifyState("editPersonalBtn");
+      }}
+      onMouseLeave={() => props.modifyState("editPersonalBtn")}
+    >
       <div className="adress">
         <h2>ADRESS</h2>
         <p>123 Address St City, ST 55555</p>
@@ -23,6 +30,7 @@ export default function PersonalInfo() {
         <p>website.com</p>
         <p>linkedin.com/in/user-name</p>
       </div>
+      {props.buttonState.editPersonalBtn && <button>EDIT</button>}
     </div>
   );
 }
