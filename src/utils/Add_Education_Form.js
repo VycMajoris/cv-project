@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 export default function AddEducationForm(props) {
-  const [form, setForm] = useState({
+  const [educationForm, setEducationForm] = useState({
     school: "",
     degree: "",
     startDate: "",
@@ -11,7 +11,7 @@ export default function AddEducationForm(props) {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setForm((prevForm) => ({
+    setEducationForm((prevForm) => ({
       ...prevForm,
       [name]: value,
     }));
@@ -31,7 +31,7 @@ export default function AddEducationForm(props) {
         type="text"
         className="form--input"
         name="school"
-        value={form.school}
+        value={educationForm.school}
         onChange={handleChange}
         id="school"
       />
@@ -40,7 +40,7 @@ export default function AddEducationForm(props) {
         type="text"
         className="form--input"
         name="degree"
-        value={form.degree}
+        value={educationForm.degree}
         onChange={handleChange}
         id="degree"
       />
@@ -49,7 +49,7 @@ export default function AddEducationForm(props) {
         type="date"
         className="form--input"
         name="start-date"
-        value={form.startDate}
+        value={educationForm.startDate}
         onChange={handleChange}
         id="start-date"
       />
@@ -58,7 +58,7 @@ export default function AddEducationForm(props) {
         type="date"
         className="form--input"
         name="end-date"
-        value={form.endDate}
+        value={educationForm.endDate}
         onChange={handleChange}
         id="end-date"
       />

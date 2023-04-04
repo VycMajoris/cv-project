@@ -2,13 +2,13 @@ import React from "react";
 import { useState } from "react";
 
 export default function AddSkillsForm(props) {
-  const [form, setForm] = useState({
+  const [skillsForm, setSkillsForm] = useState({
     skill: "",
   });
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setForm((prevForm) => ({
+    setSkillsForm((prevForm) => ({
       ...prevForm,
       [name]: value,
     }));
@@ -28,7 +28,7 @@ export default function AddSkillsForm(props) {
         type="text"
         className="form--input"
         name="skill"
-        value={form.skill}
+        value={skillsForm.skill}
         onChange={handleChange}
         id="skill"
       />

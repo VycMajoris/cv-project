@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 export default function AddPersonalForm(props) {
-  const [form, setForm] = useState({
+  const [personalForm, setPersonalForm] = useState({
     adress: "",
     phone: "",
     email: "",
@@ -11,7 +11,7 @@ export default function AddPersonalForm(props) {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setForm((prevForm) => ({
+    setPersonalForm((prevForm) => ({
       ...prevForm,
       [name]: value,
     }));
@@ -31,7 +31,7 @@ export default function AddPersonalForm(props) {
         type="text"
         className="form--input"
         name="adress"
-        value={form.adress}
+        value={personalForm.adress}
         onChange={handleChange}
         id="adress"
       />
@@ -40,7 +40,7 @@ export default function AddPersonalForm(props) {
         type="text"
         className="form--input"
         name="phone"
-        value={form.phone}
+        value={personalForm.phone}
         onChange={handleChange}
         id="phone"
       />
@@ -49,7 +49,7 @@ export default function AddPersonalForm(props) {
         type="email"
         className="form--input"
         name="email"
-        value={form.email}
+        value={personalForm.email}
         onChange={handleChange}
         id="email"
       />
@@ -58,7 +58,7 @@ export default function AddPersonalForm(props) {
         type="text"
         className="form--input"
         name="website"
-        value={form.website}
+        value={personalForm.website}
         onChange={handleChange}
         id="website"
       />

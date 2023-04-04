@@ -2,15 +2,15 @@ import React from "react";
 import { useState } from "react";
 
 export default function EditProfileForm(props) {
-  const [form, setForm] = useState({
-    yourNameText: "",
-    yourTitleText: "",
-    aboutYouText: "",
+  const [profileForm, setProfileForm] = useState({
+    yourNameText: props.personalState.yourNameText,
+    yourTitleText: props.personalState.yourTitleText,
+    aboutYouText: props.personalState.aboutYouText,
   });
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setForm((prevForm) => ({
+    setProfileForm((prevForm) => ({
       ...prevForm,
       [name]: value,
     }));
@@ -23,6 +23,10 @@ export default function EditProfileForm(props) {
     }));
   }
 
+  console.log("vrrr");
+  console.log(profileForm);
+  props.setPersonalState(profileForm);
+
   return (
     <form className="forms">
       <label htmlFor="your-name">Your name</label>
@@ -30,7 +34,7 @@ export default function EditProfileForm(props) {
         type="text"
         className="form--input"
         name="yourNameText"
-        value={form.yourNameText}
+        value={profileForm.yourNameText}
         onChange={handleChange}
         id="your-name"
       />
@@ -39,7 +43,7 @@ export default function EditProfileForm(props) {
         type="text"
         className="form--input"
         name="yourTitleText"
-        value={form.yourTitleText}
+        value={profileForm.yourTitleText}
         onChange={handleChange}
         id="your-title"
       />
@@ -47,7 +51,7 @@ export default function EditProfileForm(props) {
       <textarea
         className="form--input text-area"
         name="aboutYouText"
-        value={form.aboutYouText}
+        value={profileForm.aboutYouText}
         onChange={handleChange}
         id="about-you"
       />

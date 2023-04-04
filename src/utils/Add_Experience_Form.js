@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 export default function AddExperienceForm(props) {
-  const [form, setForm] = useState({
+  const [experienceForm, setExperienceForm] = useState({
     company: "",
     title: "",
     startDate: "",
@@ -12,7 +12,7 @@ export default function AddExperienceForm(props) {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setForm((prevForm) => ({
+    setExperienceForm((prevForm) => ({
       ...prevForm,
       [name]: value,
     }));
@@ -32,7 +32,7 @@ export default function AddExperienceForm(props) {
         type="text"
         className="form--input"
         name="company"
-        value={form.company}
+        value={experienceForm.company}
         onChange={handleChange}
         id="company"
       />
@@ -41,7 +41,7 @@ export default function AddExperienceForm(props) {
         type="text"
         className="form--input"
         name="title"
-        value={form.title}
+        value={experienceForm.title}
         onChange={handleChange}
         id="title"
       />
@@ -50,7 +50,7 @@ export default function AddExperienceForm(props) {
         type="date"
         className="form--input"
         name="start-date"
-        value={form.startDate}
+        value={experienceForm.startDate}
         onChange={handleChange}
         id="start-date"
       />
@@ -59,7 +59,7 @@ export default function AddExperienceForm(props) {
         type="date"
         className="form--input"
         name="end-date"
-        value={form.endDate}
+        value={experienceForm.endDate}
         onChange={handleChange}
         id="end-date"
       />
@@ -68,7 +68,7 @@ export default function AddExperienceForm(props) {
         type="text"
         className="form--input"
         name="location"
-        value={form.location}
+        value={experienceForm.location}
         onChange={handleChange}
         id="location"
       />
