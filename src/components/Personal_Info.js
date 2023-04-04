@@ -1,14 +1,22 @@
 import React from "react";
+import AddPersonalForm from "../utils/Edit_Personal_Form";
 
 export default function PersonalInfo(props) {
+  function handleClick() {
+    props.setFormVisibility((prevForm) => ({
+      ...prevForm,
+      personalFormVisible: true,
+    }));
+  }
+
   return (
     <div
       className="personal-info-container"
       onMouseEnter={(e) => {
         e.stopPropagation();
-        props.modifyState("editPersonalBtn");
+        props.modifyState(true, "editPersonalBtn");
       }}
-      onMouseLeave={() => props.modifyState("editPersonalBtn")}
+      onMouseLeave={() => props.modifyState(false, "editPersonalBtn")}
     >
       <div className="adress">
         <h2>ADRESS</h2>
@@ -30,7 +38,12 @@ export default function PersonalInfo(props) {
         <p>website.com</p>
         <p>linkedin.com/in/user-name</p>
       </div>
-      {props.buttonState.editPersonalBtn && <button>EDIT</button>}
+      {props.buttonState.editPersonalBtn && (
+        <button onClick={handleClick}>EDIT</button>
+      )}
+      {props.formVisibility.personalFormVisible && (
+        <AddPersonalForm setFormVisibility={props.setFormVisibility} />
+      )}
     </div>
   );
 }

@@ -1,7 +1,15 @@
 import React from "react";
 import SectionDivider from "../utils/Section_Divider";
+import AddEducationForm from "../utils/Add_Education_Form";
 
 export default function Education(props) {
+  function handleClick() {
+    props.setFormVisibility((prevForm) => ({
+      ...prevForm,
+      educationFormVisible: true,
+    }));
+  }
+
   return (
     <div
       className="education-container"
@@ -13,9 +21,13 @@ export default function Education(props) {
     >
       <SectionDivider sectionName="Education" buttonState={props.buttonState} />
       {props.buttonState.addEducationBtn && (
-        <button className="add-education-btn">ADD</button>
+        <button onClick={handleClick} className="add-education-btn">
+          ADD
+        </button>
       )}
-      <p>asdslkdafjlksj</p>
+      {props.formVisibility.educationFormVisible && (
+        <AddEducationForm setFormVisibility={props.setFormVisibility} />
+      )}
     </div>
   );
 }

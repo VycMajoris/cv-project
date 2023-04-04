@@ -24,7 +24,7 @@ export default function EditProfileForm(props) {
   }
 
   return (
-    <form className="edit-profile-form">
+    <form className="forms">
       <label htmlFor="your-name">Your name</label>
       <input
         type="text"

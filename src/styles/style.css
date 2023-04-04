@@ -233,7 +233,7 @@ button:hover, button:focus {
 
 /* Profile Popup Form */
 
-.edit-profile-form {
+.forms {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -245,7 +245,21 @@ button:hover, button:focus {
   top: 5%;
   right: 5%;
   z-index: 10;
-  
+}
+
+.personal-form {
+  top: 30%;
+  left: 30%;
+}
+
+.skills-form {
+  top: 60%;
+  left: 30%;
+  height: 120px;
+}
+
+.education-form {
+  height: 320px;
 }
 
 textarea {
@@ -255,4 +269,10 @@ textarea {
 
 label {
   color: white;
+}
+
+.form-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }

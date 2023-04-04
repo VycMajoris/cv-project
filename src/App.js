@@ -49,12 +49,16 @@ export default function App() {
             modifyState={(boolValue, buttonType) =>
               editButtonState(boolValue, buttonType)
             }
+            formVisibility={formVisibility}
+            setFormVisibility={setFormVisibility}
           />
           <Skills
             buttonState={buttonState}
             modifyState={(boolValue, buttonType) =>
               editButtonState(boolValue, buttonType)
             }
+            formVisibility={formVisibility}
+            setFormVisibility={setFormVisibility}
           />
         </section>
 
@@ -72,12 +76,16 @@ export default function App() {
             modifyState={(button, buttonType) =>
               editButtonState(button, buttonType)
             }
+            formVisibility={formVisibility}
+            setFormVisibility={setFormVisibility}
           />
           <Experience
             buttonState={buttonState}
             modifyState={(button, buttonType) =>
               editButtonState(button, buttonType)
             }
+            formVisibility={formVisibility}
+            setFormVisibility={setFormVisibility}
           />
         </section>
       </main>
