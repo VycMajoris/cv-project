@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 export default function AddExperienceForm(props) {
   const [experienceForm, setExperienceForm] = useState({
@@ -23,6 +24,13 @@ export default function AddExperienceForm(props) {
       ...prevForm,
       experienceFormVisible: false,
     }));
+  }
+
+  function addToExperienceField() {
+    props.setExperienceFields((prevForm) => {
+      const newExperienceForm = { ...experienceForm, id: nanoid() };
+      return [...prevForm, newExperienceForm];
+    });
   }
 
   return (
@@ -75,7 +83,9 @@ export default function AddExperienceForm(props) {
         id="location"
       />
       <div className="form-btn-container">
-        <button type="button">ADD</button>
+        <button type="button" onClick={addToExperienceField}>
+          ADD
+        </button>
         <button type="button" onClick={handleClick}>
           CLOSE
         </button>

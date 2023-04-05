@@ -1,6 +1,7 @@
 :root {
   --earthy-green: rgba(44, 96, 60, 0.8);
   --blue-accent-900: #82AFB4;
+  --blue-accent-400: #cbe4e7;
    --off-white: rgba(255, 255, 255, 0.8);
 }
 
@@ -73,6 +74,7 @@
     background-image: url("../assets/images/background.jpg");
     background-size: cover;
     padding: 1.5rem;
+    
     
 
 }
@@ -157,6 +159,8 @@ main {
   display: grid;
   grid-template-rows: 300px repeat(auto-fit, minmax(200px, 1fr));
   padding: 2rem;
+  max-height: 100%;
+  overflow-x: scroll;
 }
 
 .your-name {
@@ -185,13 +189,21 @@ main {
   display: flex;
   flex-direction: column;
   min-width: 100%;
+  max-height: calc((100vh-300px)/2);
   align-items: center;
+  position: relative;
+  padding-right: 10px;
+  overflow-y: scroll;
 
 }
 
 .section-divider {
   min-width: 100%;
-  color: var(--blue-accent-900)
+  color: var(--blue-accent-900);
+  position:sticky;
+  top: 0;
+
+  
 }
 
 .section-divider h2 {
@@ -199,9 +211,7 @@ main {
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
-.education-container, .experience-container {
-  position: relative;
-}
+
 
 .add-education-btn, .add-experience-btn{
   position: absolute;
@@ -218,7 +228,8 @@ main {
 
 button {
   padding: 0.125rem 0.25rem;
-  background-color: var(--blue-accent-900);
+  margin-right: 0.5rem;
+  background-color:var(--earthy-green);
   color: white;
   border-style: none;
   border-radius: 0.5rem;
@@ -281,4 +292,90 @@ label {
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+/************ Edu Container (individual edu fields) ***********/
+
+.edu-container, .exp-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  background-color: rgba(255,255,255, 0.3);
+  border-radius: 1rem;
+
+}
+
+.edu-container-left, .exp-container-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 2rem;
+  font-weight: 200;
+}
+
+.exp-container-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: auto;
+}
+
+.school-container, .company-container {
+  font-style: italic;
+    font-weight: 700;
+    font-size: 1.25rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+.degree-container, .location-container {
+  color: var(--earthy-green);
+  font-weight: 700;
+  font-style: italic;
+}
+
+.exp-dates-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.title-container {
+  margin-inline: auto;
+  color: var(--earthy-green);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+/* Scroll bar style */
+
+/* Hide the scrollbar by default */
+::-webkit-scrollbar {
+  width: 0;
+
+}
+
+/* Show the scrollbar when it's active */
+::-webkit-scrollbar-thumb {
+  background-color: var(--earthy-green);
+  border-radius: 10px;
+}
+
+/* Set the track color */
+::-webkit-scrollbar-track {
+  background-color: rgba(255,255,255,0);
+}
+
+/* Set the scrollbar width and height */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 10px;
+}
+
+/* Set the thumb size */
+::-webkit-scrollbar-thumb {
+  height: 50px;
 }

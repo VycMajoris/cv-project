@@ -2,17 +2,12 @@ import React, { useState } from "react";
 import SectionDivider from "../utils/Section_Divider";
 import AddEducationForm from "../utils/Add_Education_Form";
 import EduFieldContainer from "../utils/Edu_Field_Container";
+import { nanoid } from "nanoid";
 
 export default function Education(props) {
   const [educationFields, setEducationFields] = useState([
     {
-      school: "Harvard",
-      degree: "Economy",
-      startDate: "May 2015",
-      endDate: "Aug 2019",
-    },
-    {
-      school: "Harvard",
+      school: "Harvard University",
       degree: "Economy",
       startDate: "May 2015",
       endDate: "Aug 2019",
@@ -26,8 +21,10 @@ export default function Education(props) {
     }));
   }
 
+  console.log(educationFields);
+
   const fields = educationFields.map((item) => {
-    return <EduFieldContainer field={item} />;
+    return <EduFieldContainer field={item} key={nanoid()} />;
   });
 
   return (

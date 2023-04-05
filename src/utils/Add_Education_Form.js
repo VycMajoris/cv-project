@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 export default function AddEducationForm(props) {
   const [educationForm, setEducationForm] = useState({
@@ -24,7 +25,12 @@ export default function AddEducationForm(props) {
     }));
   }
 
-  function addToEducationField() {}
+  function addToEducationField() {
+    props.setEducationFields((prevForm) => {
+      const newEducationForm = { ...educationForm, id: nanoid() };
+      return [...prevForm, newEducationForm];
+    });
+  }
 
   return (
     <form className="forms education-form">
@@ -69,7 +75,9 @@ export default function AddEducationForm(props) {
       <hr></hr>
 
       <div className="form-btn-container">
-        <button type="button">ADD</button>
+        <button type="button" onClick={addToEducationField}>
+          ADD
+        </button>
         <button type="button" onClick={handleClick}>
           CLOSE
         </button>
