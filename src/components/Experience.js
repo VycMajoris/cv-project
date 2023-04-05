@@ -12,6 +12,7 @@ export default function Experience(props) {
       startDate: "May 2015",
       endDate: "Aug 2019",
       location: "New York",
+      id: "",
     },
   ]);
 
@@ -23,7 +24,17 @@ export default function Experience(props) {
   }
 
   const fields = experienceFields.map((item) => {
-    return <ExpFieldContainer field={item} key={nanoid()} />;
+    const uniqueId = nanoid();
+    item.id = uniqueId;
+    return (
+      <ExpFieldContainer
+        field={item}
+        key={nanoid()}
+        id={uniqueId}
+        experienceFields={experienceFields}
+        setExperienceFields={setExperienceFields}
+      />
+    );
   });
 
   return (

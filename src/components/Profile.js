@@ -38,10 +38,10 @@ export default function Profile(props) {
         )}
       </div>
       <p className="your-title">{personalState.yourTitleText}</p>
-      <p>About you</p>
-      <h2 className="about-you">{personalState.aboutYouText}</h2>
 
-      <p className="about-para"></p>
+      <h2 className="about-you">About you</h2>
+
+      <p className="about-para">{personalState.aboutYouText}</p>
       {props.formVisibility.profileFormVisible && (
         <EditProfileForm
           setFormVisibility={props.setFormVisibility}

@@ -37,6 +37,7 @@ export default function EditProfileForm(props) {
         value={profileForm.yourNameText}
         onChange={handleChange}
         id="your-name"
+        maxLength={24}
       />
       <label htmlFor="your-title">Your title</label>
       <input
@@ -46,6 +47,7 @@ export default function EditProfileForm(props) {
         value={profileForm.yourTitleText}
         onChange={handleChange}
         id="your-title"
+        maxLength={48}
       />
       <label htmlFor="about-you">About you</label>
       <textarea
@@ -54,6 +56,7 @@ export default function EditProfileForm(props) {
         value={profileForm.aboutYouText}
         onChange={handleChange}
         id="about-you"
+        maxLength={500}
       />
       <hr></hr>
       <button type="button" onClick={handleClick}>

@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 
 export default function ExpFieldContainer(props) {
+  function removeField() {
+    const itemToDelete = props.experienceFields.find(
+      (item) => item.id === props.id
+    );
+
+    props.setExperienceFields((prevField) => {
+      const newArray = prevField.filter((item) => item.id !== itemToDelete.id);
+      return newArray;
+    });
+  }
+
   return (
-    <div className="exp-container">
+    <div className="exp-container" onClick={removeField}>
       <div className="exp-container-left">
         <div className="exp-dates-container">
           <div className="start-date-container">{props.field.startDate}</div>

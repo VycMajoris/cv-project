@@ -11,6 +11,7 @@ export default function Education(props) {
       degree: "Economy",
       startDate: "May 2015",
       endDate: "Aug 2019",
+      id: "",
     },
   ]);
 
@@ -24,7 +25,17 @@ export default function Education(props) {
   console.log(educationFields);
 
   const fields = educationFields.map((item) => {
-    return <EduFieldContainer field={item} key={nanoid()} />;
+    const uniqueId = nanoid();
+    item.id = uniqueId;
+    return (
+      <EduFieldContainer
+        field={item}
+        key={nanoid()}
+        id={uniqueId}
+        educationFields={educationFields}
+        setEducationFields={setEducationFields}
+      />
+    );
   });
 
   return (
