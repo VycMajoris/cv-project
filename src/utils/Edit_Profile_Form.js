@@ -55,6 +55,7 @@ export default function EditProfileForm(props) {
         onChange={handleChange}
         id="about-you"
       />
+      <hr></hr>
       <button type="button" onClick={handleClick}>
         CLOSE
       </button>

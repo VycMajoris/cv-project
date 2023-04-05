@@ -1,7 +1,7 @@
 :root {
   --earthy-green: rgba(44, 96, 60, 0.8);
-  --blue-accent: #82AFB4;
-  --off-white: rgba(255, 255, 255, 0.8);
+  --blue-accent-900: #82AFB4;
+   --off-white: rgba(255, 255, 255, 0.8);
 }
 
 /*
@@ -100,7 +100,7 @@ main {
 .cv-title  {
   height: 4rem;
   width: 100%;
-  background-color: var(--blue-accent);
+  background-color: var(--blue-accent-900);
   color: white;
   font-size: 1.5rem;
   letter-spacing: 0.25rem;
@@ -161,7 +161,7 @@ main {
 
 .your-name {
   font-size: 3rem;
-  color: var(--blue-accent);
+  color: var(--blue-accent-900);
 }
 
 .your-title {
@@ -170,7 +170,7 @@ main {
 
 .about-you{
   font-size: 1.25rem;
-  color: var(--blue-accent);
+  color: var(--blue-accent-900);
 }
 
 .edit-profile-btn {
@@ -191,7 +191,7 @@ main {
 
 .section-divider {
   min-width: 100%;
-  color: var(--blue-accent)
+  color: var(--blue-accent-900)
 }
 
 .section-divider h2 {
@@ -218,12 +218,17 @@ main {
 
 button {
   padding: 0.125rem 0.25rem;
-  color: var(--off-white);
-  background-color: var(--blue-accent);
+  background-color: var(--blue-accent-900);
+  color: white;
   border-style: none;
   border-radius: 0.5rem;
   cursor: pointer;
 
+}
+
+form button {
+  color: var(--blue-accent-900);
+  background-color: white;
 }
 
 button:hover, button:focus {
@@ -237,7 +242,7 @@ button:hover, button:focus {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background-color: var(--blue-accent);
+  background-color: var(--blue-accent-900);
   width: 300px;
   height: 400px;
   padding: 1rem;
@@ -249,17 +254,18 @@ button:hover, button:focus {
 
 .personal-form {
   top: 30%;
-  left: 30%;
+  left: 40%;
+  height: min-content;
 }
 
 .skills-form {
-  top: 60%;
-  left: 30%;
-  height: 120px;
+  top: 50%;
+  left: 40%;
+  height: min-content;
 }
 
 .education-form {
-  height: 320px;
+  height: min-content;
 }
 
 textarea {

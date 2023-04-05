@@ -24,9 +24,11 @@ export default function AddEducationForm(props) {
     }));
   }
 
+  function addToEducationField() {}
+
   return (
     <form className="forms education-form">
-      <label htmlFor="your-name">School</label>
+      <label htmlFor="school">School</label>
       <input
         type="text"
         className="form--input"
@@ -46,22 +48,26 @@ export default function AddEducationForm(props) {
       />
       <label htmlFor="start-date">Start date</label>
       <input
-        type="date"
+        placeholder="Month & Year (e.g. MAY 2015)"
+        type="text"
         className="form--input"
-        name="start-date"
+        name="startDate"
         value={educationForm.startDate}
         onChange={handleChange}
         id="start-date"
       />
       <label htmlFor="end-date">End date</label>
       <input
-        type="date"
+        placeholder="Month & Year (e.g. MAY 2015)"
+        type="text"
         className="form--input"
-        name="end-date"
+        name="endDate"
         value={educationForm.endDate}
         onChange={handleChange}
         id="end-date"
       />
+      <hr></hr>
+
       <div className="form-btn-container">
         <button type="button">ADD</button>
         <button type="button" onClick={handleClick}>

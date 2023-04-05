@@ -62,6 +62,7 @@ export default function AddPersonalForm(props) {
         onChange={handleChange}
         id="website"
       />
+      <hr></hr>
       <button type="button" onClick={handleClick}>
         CLOSE
       </button>

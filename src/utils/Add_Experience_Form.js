@@ -47,18 +47,20 @@ export default function AddExperienceForm(props) {
       />
       <label htmlFor="start-date">Start date</label>
       <input
-        type="date"
+        placeholder="Month & Year (e.g. MAY 2015)"
+        type="text"
         className="form--input"
-        name="start-date"
+        name="startDate"
         value={experienceForm.startDate}
         onChange={handleChange}
         id="start-date"
       />
       <label htmlFor="end-date">End date</label>
       <input
-        type="date"
+        placeholder="Month & Year (e.g. MAY 2015)"
+        type="text"
         className="form--input"
-        name="end-date"
+        name="endDate"
         value={experienceForm.endDate}
         onChange={handleChange}
         id="end-date"

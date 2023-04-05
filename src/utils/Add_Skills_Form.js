@@ -32,6 +32,7 @@ export default function AddSkillsForm(props) {
         onChange={handleChange}
         id="skill"
       />
+      <hr></hr>
       <div className="form-btn-container">
         <button type="button">ADD</button>
         <button type="button" onClick={handleClick}>
