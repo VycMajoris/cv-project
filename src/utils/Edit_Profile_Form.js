@@ -23,8 +23,6 @@ export default function EditProfileForm(props) {
     }));
   }
 
-  console.log("vrrr");
-  console.log(profileForm);
   props.setPersonalState(profileForm);
 
   return (

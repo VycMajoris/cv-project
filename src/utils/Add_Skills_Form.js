@@ -1,13 +1,17 @@
 import React from "react";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
-export default function AddSkillsForm(props) {
-  const [skillsForm, setSkillsForm] = useState({
-    skill: "",
-  });
+export default function AddSkillsForm({
+  skillState,
+  setSkillState,
+  setFormVisibility,
+}) {
+  const [skillsForm, setSkillsForm] = useState({ skill: "", id: "" });
 
   function handleChange(event) {
     const { name, value } = event.target;
+
     setSkillsForm((prevForm) => ({
       ...prevForm,
       [name]: value,
@@ -15,10 +19,18 @@ export default function AddSkillsForm(props) {
   }
 
   function handleClick() {
-    props.setFormVisibility((prevForm) => ({
+    setFormVisibility((prevForm) => ({
       ...prevForm,
       skillsFormVisible: false,
     }));
+  }
+
+  function addToSkillsField() {
+    setSkillState((prevForm) => {
+      const newSkillsForm = { ...skillsForm, id: nanoid() };
+      return [...prevForm, newSkillsForm];
+    });
+    setSkillsForm({ skill: "", id: "" });
   }
 
   return (
@@ -34,7 +46,9 @@ export default function AddSkillsForm(props) {
       />
       <hr></hr>
       <div className="form-btn-container">
-        <button type="button">ADD</button>
+        <button type="button" onClick={addToSkillsField}>
+          ADD
+        </button>
         <button type="button" onClick={handleClick}>
           CLOSE
         </button>

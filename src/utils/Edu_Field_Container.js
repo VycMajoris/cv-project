@@ -14,7 +14,7 @@ export default function EduFieldContainer(props) {
   }
 
   return (
-    <div className="edu-container" onClick={removeField}>
+    <div className="edu-container" onDoubleClick={removeField}>
       <div className="edu-container-left">
         <div className="start-date-container">{props.field.startDate}</div>
         <div> - </div>

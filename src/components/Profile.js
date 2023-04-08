@@ -5,7 +5,7 @@ export default function Profile(props) {
   const [personalState, setPersonalState] = useState({
     yourNameText: "Your name",
     yourTitleText: "Your title",
-    aboutYouText: "About you",
+    aboutYouText: "Introduce yourself here",
   });
 
   const formVisibility = props.formVisibilityState;
@@ -16,8 +16,6 @@ export default function Profile(props) {
       profileFormVisible: true,
     }));
   }
-
-  console.log(personalState);
 
   return (
     <div

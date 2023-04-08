@@ -7,7 +7,7 @@ import { nanoid } from "nanoid";
 export default function Education(props) {
   const [educationFields, setEducationFields] = useState([
     {
-      school: "Harvard University",
+      school: "... University",
       degree: "Economy",
       startDate: "May 2015",
       endDate: "Aug 2019",
@@ -22,10 +22,14 @@ export default function Education(props) {
     }));
   }
 
-  console.log(educationFields);
+  const fieldId = [];
 
-  const fields = educationFields.map((item) => {
-    const uniqueId = nanoid();
+  for (let i = 0; i < educationFields.length; i++) {
+    fieldId.push(nanoid());
+  }
+
+  const fields = educationFields.map((item, index) => {
+    const uniqueId = fieldId[index];
     item.id = uniqueId;
     return (
       <EduFieldContainer

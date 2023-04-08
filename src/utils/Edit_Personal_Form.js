@@ -1,12 +1,16 @@
 import React from "react";
 import { useState } from "react";
 
-export default function AddPersonalForm(props) {
+export default function AddPersonalForm({
+  personalInfoFields,
+  setPersonalInfoFields,
+  setFormVisibility,
+}) {
   const [personalForm, setPersonalForm] = useState({
-    adress: "",
-    phone: "",
-    email: "",
-    website: "",
+    adress: personalInfoFields.adress,
+    phone: personalInfoFields.phone,
+    email: personalInfoFields.email,
+    website: personalInfoFields.website,
   });
 
   function handleChange(event) {
@@ -18,11 +22,13 @@ export default function AddPersonalForm(props) {
   }
 
   function handleClick() {
-    props.setFormVisibility((prevForm) => ({
+    setFormVisibility((prevForm) => ({
       ...prevForm,
       personalFormVisible: false,
     }));
   }
+
+  setPersonalInfoFields(personalForm);
 
   return (
     <form className="forms personal-form">

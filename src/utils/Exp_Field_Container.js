@@ -13,7 +13,7 @@ export default function ExpFieldContainer(props) {
   }
 
   return (
-    <div className="exp-container" onClick={removeField}>
+    <div className="exp-container" onDoubleClick={removeField}>
       <div className="exp-container-left">
         <div className="exp-dates-container">
           <div className="start-date-container">{props.field.startDate}</div>

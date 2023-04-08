@@ -7,7 +7,7 @@ import { nanoid } from "nanoid";
 export default function Experience(props) {
   const [experienceFields, setExperienceFields] = useState([
     {
-      company: "Harvard University",
+      company: "... Company",
       title: "Web Dev",
       startDate: "May 2015",
       endDate: "Aug 2019",
@@ -23,8 +23,14 @@ export default function Experience(props) {
     }));
   }
 
-  const fields = experienceFields.map((item) => {
-    const uniqueId = nanoid();
+  const fieldId = [];
+
+  for (let i = 0; i < experienceFields.length; i++) {
+    fieldId.push(nanoid());
+  }
+
+  const fields = experienceFields.map((item, index) => {
+    const uniqueId = fieldId[index];
     item.id = uniqueId;
     return (
       <ExpFieldContainer
